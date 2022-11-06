@@ -67,17 +67,18 @@
             <td>Is BCNF?</td>
             <td><span class="sol" style="display:none">{{solution.is_bcnf}}</span></td>
           </tr>
-          <tr>
+          <tr style="display:none">
             <td>Is 3NF?</td>
             <td><span class="sol" style="display:none">{{solution.is_3nf}}</span></td>
           </tr>
         </tbody></table>
       </div>
 
-      <div class="col-md-2" >
+      
+      <div class="col-md-2" style="display:none">
         <h3>Minimal FDs</h3>
         <small>List the minimal closure for the functional dependencies</small>
-        <div class="sol" style="display: none">
+        <div class="sol-no" style="display: none">
             {{#each solution.minfds}}
               <div>{{this}}</div>
             {{/each}}
@@ -86,24 +87,27 @@
       <div class="col-md-6" >
         <h3>Decomposition</h3>
         <h4>BCNF using FDs</h4>
-        <small>List the BCNF decomposition using the provided functional dependencies:</small>
+        <small>List the BCNF decomposition using the provided functional dependencies.  
+              Note that BCNF decomposition is not unique!:</small>
         <div>
           <span class="sol" style="display:none">{{#each solution.bcnf.orig}} <span class='relation'>{{this}}</span> {{/each}}</span>
         </div>
 
+        <!--
         <br/>
         <h4>BCNF using Minimal Cover</h4>
         <small>List the BCNF decomposition using the minimal closure of the functional deps (this is just to give you more decomposition exercises):</small>
         <div>
-          <span class="sol" style="display:none">{{#each solution.bcnf.minfds}} <span class='relation'>{{this}}</span> {{/each}}</span>
+          <span class="sol-no" style="display:none">{{#each solution.bcnf.minfds}} <span class='relation'>{{this}}</span> {{/each}}</span>
         </div>
 
         <br/>
         <h4>3NF</h4>
         <small>List the 3NF decomposition:</small>
         <div>
-          <span class="sol" style="display:none">{{#each solution.tnf}} <span class='relation'>{{this}}</span> {{/each}}</span>
+          <span class="sol-no" style="display:none">{{#each solution.tnf}} <span class='relation'>{{this}}</span> {{/each}}</span>
         </div>
+        -->
       </div>
 
     </div>
