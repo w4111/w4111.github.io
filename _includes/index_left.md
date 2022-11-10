@@ -55,3 +55,4 @@ Office Hours  and Links
 * Exam 2 <small>40%</small>
 * Extra Credits
   * [Learn a DB Technology](https://github.com/w4111/w4111.github.io/wiki)
+  * [Analyze Kaggle in Kaggle](https://github.com/w4111/-Extra-Credit-Kaggle-Analysis-)
