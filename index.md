@@ -36,6 +36,7 @@ Developed by others:
 * [Sign up for Project 1 Part 1 staff meetings!](https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUpOU05mUUpZYXk2fGRlZmF1bHR8YmE0YmE0M2MzNzkyYWZjOTcxYjRkMTBmNDNmNjA1NDc)  One meeting per team.
 * Updated lecture 2 slides to clarify constraints over N-way relationships.
 -->
+* 11/11: fixed a bug in data quality slide 37.  The example incorrectly stated that `ACDE` is in BCNF.  It is not because `B` is not in the projection, so `C` does not determine `A`, and is thus not a key.   This has been fixed in the slide.
 * 11/1: added [clarification to HW3 Q1.5's prompt ](https://edstem.org/us/courses/28081/discussion/2053185)
 * 10/27: updated normalization slides to fix error in BCNF decomposition example.
 * 10/24: added a link to [Functional Dependency Exercies](http://w4111.github.io/fd).
