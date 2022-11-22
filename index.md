@@ -36,6 +36,7 @@ Developed by others:
 * [Sign up for Project 1 Part 1 staff meetings!](https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUpOU05mUUpZYXk2fGRlZmF1bHR8YmE0YmE0M2MzNzkyYWZjOTcxYjRkMTBmNDNmNjA1NDc)  One meeting per team.
 * Updated lecture 2 slides to clarify constraints over N-way relationships.
 -->
+* 11/22: links to [join ordering](./join) and [concurrency control](./concurrency) problem generators.
 * 11/19: uploaded makeup video for lecture 20.  Called "W4111 L20 Selinger" in the course works video library
 * 11/11: fixed a bug in data quality slide 37.  The example incorrectly stated that `ACDE` is in BCNF.  It is not because `B` is not in the projection, so `C` does not determine `A`, and is thus not a key.   This has been fixed in the slide.
 * 11/1: added [clarification to HW3 Q1.5's prompt ](https://edstem.org/us/courses/28081/discussion/2053185)
