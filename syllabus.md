@@ -100,7 +100,7 @@ Collaboration and Cheating
 * If you are struggling to keep up in the course, come see the instructor during office hours.
 * Cheating is a slippery slope -- it may be enticing, but goes against the values in this course.
 
-**[If you have _any_ doubt, see Columbia's description of academic honesty](http://www.cs.columbia.edu/education/honesty) or talk to the Professor**
+**[If you have _any_ doubt, see Columbia's description of academic honesty](http://www.cs.columbia.edu/education/honesty) and talk to the Professor**
 
 
 
