@@ -1,0 +1,41 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+
+  <h2>bad form</h2>
+  <form action="/" method="POST">
+    <input name="name" style="width: 50ex"/>
+    <input type="submit" value="Add your name"/>
+  </form>
+
+
+
+  <table>
+  {% for row in data %}
+    <tr>
+      <td>{{row.id}}</td>
+      <td>{{row.name}}</td>
+    </tr>
+  {% endfor %}
+  </table>
+
+
+
+  <h2>safe form</h2>
+  <form action="/safe/" method="POST">
+    <input name="name" style="width: 50ex"/>
+    <input type="submit" value="Add your name"/>
+  </form>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,42 @@
+<html>
+  <head>
+  <script src="./files/js/matrix.js"></script>
+  </head>
+<body>
+    <style>
+        table, form {
+          font-size: 25pt;
+        }
+        button {
+          width: 100%;
+            min-width: 250px;
+            margin-right: 1em;
+            padding: 1em;
+            font-size: 25pt;
+        }
+    </style>
+
+  <h1>Quiz!</h1>
+
+  {% if not stats %}
+  <!-- stats are normalized to number of characters that should be rendered -->
+
+  <form action="/vote/" method="post"><button name="vote" value="A">A</button></form>
+  <form action="/vote/" method="post"><button name="vote" value="B">B</button></form>
+  <form action="/vote/" method="post"><button name="vote" value="C">C</button></form>
+
+  {% else %}
+  <table>
+  {% for vote, bar, c in stats %}
+    <tr>
+        <td>{{c}}</td>
+        <td>{{vote}}</td>
+        <td>{{bar}}</td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% endif %}
+</body>
+
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+<body>
+
+  <h1>hello</h1>
+
+  <table>
+  {% for row in data %}
+    <tr>
+    {% for col in row %}
+      <td>{{col}}</td>
+    {% endfor %}
+    </tr>
+  {% endfor %}
+  </ul>
+
+
+  <form method="post" action="/names/new/">
+    <input name="myname"></input>
+    <input name="yourname"></input>
+    <input type=submit></input>
+  </form>
+
+
+</body>
+
+
+</html>
