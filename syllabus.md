@@ -4,30 +4,45 @@ layout: page
 
 ## W4111 Syllabus 
 
-
 The goal of this class is two-fold.  First, to introduce
 you to core database concepts (e.g., data modeling, logical
 design, SQL) so that you too can build a billion dollar
 application.  Second, to teach enough about database engine
 internals (e.g., physical database design, query optimization,
-transaction processing) so you have a good sense of why
-queries may be running slowly/incorrectly.
+transaction processing) so you can make good decisions when using
+a DBMS and debugging slow/incorrect queries.  
 
 Along the way, we will point out connections with modern 
 data systems and data engineering concepts in industry,
 as the field is moving quickly.
 
+At the completion of this course, the student should be able to
+
+* Perform rapid data modeling using ER diagrams
+* Design proper database schemas using database tables, normal forms, and constraints
+* Express queries using relational algebra 
+* Manage and query data using SQL
+* Find common data errors
+* Identify common database security flaws and mechanism
+* Understand the process of cost-based query optimization
+* Understand the basics of transactions and correct data recovery 
 
 Course website: [http://w4111.github.io/](http://w4111.github.io/)
 
+
+
+
+### Waitlist
+
+This course waitlist prioritizes students in the Computer Science department, and is managed by the student services staff.   The instructor does not manage the waitlist.
 
 ### Format
 
 Class meets once a week for ~3 hours
 
 * There will be a break in the middle of each lecture
-* All lectures will be delivered live.  The first 2 weeks will be virtual (Zoom-only).  In-person will resume based on University guidance.
-* All zoom recordings will be on Courseworks.  
+* All lectures will be delivered live.  <!--The first 2 weeks will be virtual (Zoom-only).  In-person will resume based on University guidance.-->
+* Recorded lectures will be on Courseworks.  
 * Attending lectures live is not required.  It is encouraged and will give you the change to participate in discussions, practice problems, etc.
 * Webcams and mics are not required, though encouraged.
 * We will use Ed (rather than courseworks) for discussions.  
@@ -80,28 +95,51 @@ contains links to useful tutorials.
 
 ### Assignment Collaboration Policies AKA Cheating
 
-Homeworks
+Any part of an assignment or exam that is not created and written by you must be clearly identified and cited.   This includes referring to an external website, asking a colleague, and using GenAI.  Even if you have paraphrased/summarized ideas from elsewhere, you must cite it.  You may not look at another student's solution without permission from the staff, and may not knowingly share your solutions or leave the solutions where they can be seen (physically and digitally).    We use the term GenAI to refer to AI coding assistants (e.g., Github Copilot, Cursor, or Replit) and large language models (e.g., ChatGPT, Anthropic, etc).
 
-* Homework assignments must be done alone.  
-* No collaboration is allowed.  **[Don't do it](http://www.cs.columbia.edu/education/honesty)**
+The following are examples of behavior that is not allowed:
 
-Projects
+* Copying (or retyping) homework, project, or exam solutions from another person or source, either in draft or final form, even if permissions are incorrectly set to allow it. This behavior is still clearly inappropriate even if you make modifications from the original source.
+* Searching for or viewing a current or past student's homework, project, or exam solution.
+* Using a GenAI tool to help you on an assignment or exam. 
+* Allowing someone else to view or copy your code, written assignment, quiz, or exam, either in draft or final form.
+* Getting help that you do not fully understand or from someone whom you do not acknowledge on your solution.
+* Coaching others step-by-step without them understanding your help.
+* Writing, using, or submitting a program that attempts to alter or erase grading information or otherwise compromise security of course resources.
+* Lying to course staff.
+* Making your work publicly available in a way that other students (current or future) can access your solutions, even if others’ access is accidental or incidental to your goals.
+* (the above examples are borrowed from [CMU 15-445/645](https://15445.courses.cs.cmu.edu/fall2024/syllabus.html))
 
-* Projects are in teams of 2.  
-* Both members will recieve the same grade and should collaborate with each other.  
-* Collaboration outside of the team is not allowed. **[Don't do it](http://www.cs.columbia.edu/education/honesty)**
-* CVN students are also required to have a partner.  The partner can be someone in the main class or flipped classroom.
 
-Collaboration and Cheating
+The following are examples that are not considered cheating
 
-* Cheating is no fun for anyone
-* Rampant cheating devaluages the Columbia degree.
-* **Any *hint* of cheating will be reported to student affairs.**
-* If you are struggling to keep up in the course, come see the instructor during office hours.
-* Cheating is a slippery slope -- it may be enticing, but goes against the values in this course.
+* clarify vague instructions in assignments,  lectures, lecture notes, 
+* help in setting up a computing environment, such as Colab or BigQuery,
+* learning how to use a computer system, such as using git, command line, python, etc
+* discuss concepts introduced in lecture that is unrelated to the specifics of an assignment.
+
+
+If you believe you have violated this collaboration policy, you may retroactively retract your submission. If this is done before the staff becomes aware of your conduct, you will receive a zero grade on the submission and we will not consider your conduct to be an academic integrity violation.
+
+
+Ultimately, cheating is no fun for anyone, and devalues your degree.  Thus, **Any *hint* of cheating will be reported to student affairs.** If you are struggling to keep up in the course, come see the instructor during office hours. Please remember that cheating is a slippery slope -- it may be enticing, but goes against the values in this course.
+
 
 **[If you have _any_ doubt, see Columbia's description of academic honesty](http://www.cs.columbia.edu/education/honesty) and talk to the Professor**
 
+
+#### Homeworks
+
+* Homework assignments must be done ALONE and collaboration is not allowed.  
+* By default, large language models (e.g., ChatGPT, Sonnet, Mistral, etc) are not permitted.
+
+#### Projects
+
+* Projects are in teams of 2.  
+* **Both members will recieve the same grade** and should thus communicate and collaborate with each other.  
+* Collaboration outside of the team is not allowed. **[Don't do it](http://www.cs.columbia.edu/education/honesty)**
+* CVN students are also required to have a partner.  The partner can be someone in the main class or another CVN student.
+* You may use GenAI to aid your development **during Project 1 Part 3 and Project 2**.  You must document the portions of your code that were derived from GenAI, and write a document how it was used (the prompts, how you incorporated and edited the AI outputs).  These should be submitted in a supplementary document.
 
 
 
@@ -217,7 +255,11 @@ Checklist when asking for help:
 Methods of communication:
 
 * **(Most Preferred)**: [Ed Discussion](https://edstem.org/us/courses/17037/discussion/)
-* **(Least Preferred)**: Email course staff.  There are too many people in the course for this to be a primary option!
-* Announcements will be on website and via emails using Piazza
+* **(Least Preferred)**: Email course staff.  If it should have bene a Ed post, we will reply to that effect.  <!--  There are too many people in the course for this to be a primary option!-->
+* Announcements will be on website and via emails using Ed.
+
+
+
+
 
 
