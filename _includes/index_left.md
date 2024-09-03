@@ -18,9 +18,9 @@
 
 
 * [Eugene Wu](http://www.eugenewu.net) <small>Instructor</small>   
-  <small></small>
+  <small>Tues 10:15-11:15 421 Mudd</small>
 * [Jerry Liu](https://jerrrrryl.github.io/)
-  <small></small>
+  <small>Tues 2-4PM [DSI lounge](http://eugenewu.net/files/images/map.png)</small>
 
 Office Hours and Links
 
