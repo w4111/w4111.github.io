@@ -27,6 +27,7 @@ Office Hours and Links
 * [OH Calendar](https://calendar.google.com/calendar/u/0?cid=djc5aHNwOXFpa3VlMmYzczRia2RlbXN1NGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 * Proj1 Part 1 Appointments
   * [Eugene Wu's appointment page](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2QGTpXZUFKyCrAx_ooU_5lLYmeDPWl8nA00HfAzxytHhtNzNToz8cHsusSVeGQLvagE5PNxKYH)
+  * [Vareesh's appointment page](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1j7iTVHoxGIgqOcbr8ncTF_1jDrxZ4kQGV1suEw9a0v18AmENNba_amSl5BzS0E0y32yiaUvwR)
 
 #### Prereqs
 
