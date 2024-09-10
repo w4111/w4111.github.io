@@ -24,10 +24,14 @@
 
 Office Hours and Links
 
-* [OH Calendar](https://calendar.google.com/calendar/u/0?cid=djc5aHNwOXFpa3VlMmYzczRia2RlbXN1NGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
+* [OH Calendar](https://calendar.google.com/calendar/u/0/r/month/2024/9/1?cid=4111f24%40gmail.com)
 * Proj1 Part 1 Appointments
   * [Eugene Wu's appointment page](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2QGTpXZUFKyCrAx_ooU_5lLYmeDPWl8nA00HfAzxytHhtNzNToz8cHsusSVeGQLvagE5PNxKYH)
   * [Vareesh's appointment page](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1j7iTVHoxGIgqOcbr8ncTF_1jDrxZ4kQGV1suEw9a0v18AmENNba_amSl5BzS0E0y32yiaUvwR)
+  * [Jordyn Jaffe's appointment page](https://calendar.app.google/ojGpEJbbaKEMpXq77)
+  * [Vareesh's appointment page](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1j7iTVHoxGIgqOcbr8ncTF_1jDrxZ4kQGV1suEw9a0v18AmENNba_amSl5BzS0E0y32yiaUvwR)
+  * [Jerry's appointment page](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3_uAm2xmCbwk3Xe2sSx9Ymkas4ma1MVhkhtI34ZCLLoWcXBwEj0gOmy4m2Ik3pOdz8KlWnmDvo)
+  * [Riz Chen's appointment page](https://calendar.app.google/yTFUHkBX82D7e6NW6)
 
 #### Prereqs
 
