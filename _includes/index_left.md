@@ -9,6 +9,7 @@
 * [Provide Feedback](https://forms.gle/eTLxpLM5DxK8KpNKA)
 * [Course Github](http://github.com/w4111)
 * [Course Gradescope](https://www.gradescope.com/courses/842574)
+* [Course Videos](https://cvn.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?embedded=1#folderID=%2259e47ad0-6410-4075-b5c4-b1d200351998%22)
 <!--* [Course Videos](https://cvn.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=61080197-48b9-4963-a2cf-aefc008a344d)-->
 
 
