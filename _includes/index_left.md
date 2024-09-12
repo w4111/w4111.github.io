@@ -32,6 +32,7 @@ Office Hours and Links
   * [Vareesh's appointment page](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1j7iTVHoxGIgqOcbr8ncTF_1jDrxZ4kQGV1suEw9a0v18AmENNba_amSl5BzS0E0y32yiaUvwR)
   * [Jerry's appointment page](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3_uAm2xmCbwk3Xe2sSx9Ymkas4ma1MVhkhtI34ZCLLoWcXBwEj0gOmy4m2Ik3pOdz8KlWnmDvo)
   * [Riz Chen's appointment page](https://calendar.app.google/yTFUHkBX82D7e6NW6)
+  * [Haonan's appointment page](https://calendar.app.google/S5Ce5ZvoifUoSU5YA)
 
 #### Prereqs
 
