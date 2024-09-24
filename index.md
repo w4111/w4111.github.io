@@ -25,6 +25,7 @@ Developed by others:
 
 #### Announcements
 
+* 9/23: Notebook examples used in class [can be found here](https://colab.research.google.com/github/w4111/w4111.github.io/blob/master/src/notebooks/ertosql_private.ipynb).   Click on "Open in Colab" on the line with ertosql_private.ipynb
 <!--
 * 9/6: [HW0](https://github.com/w4111/hw0) released.  No Late Days!  Failure to submit on time is a -5% penalty on your final grade.
 -->
