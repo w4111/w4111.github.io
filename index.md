@@ -19,13 +19,14 @@ Developed for W4111
 
 Developed by others:
 
-* An [external Relation Algebra calculator](http://dbis-uibk.github.io/relax/calc.htm#) that might help you write and understand relational algebra.
 * Here is a [link to another DB course's database recovery simulator](https://mwhittaker.github.io/aries/) (ARIES protocol).  It is more in depth than what we discussed in class, but is nice if you are interested in the details.
 -->
 
 #### Announcements
 
-* 9/25: [link to all past midterms](./files/reading).  Midterm 1 is comparable to this semester's midterm 1, and midterm 2 is comparable to this semester's final.
+
+* 9/29: An [external Relation Algebra calculator](http://dbis-uibk.github.io/relax/calc.htm#) that might help you write and understand relational algebra.
+* 9/25: [link to all past midterms](https://github.com/w4111/w4111.github.io/tree/main/files/reading).  Midterm 1 is comparable to this semester's midterm 1, and midterm 2 is comparable to this semester's final.
 * 9/23: Notebook examples used in class [can be found here](https://colab.research.google.com/github/w4111/w4111.github.io/blob/master/src/notebooks/ertosql_private.ipynb).   Click on "Open in Colab" on the line with ertosql_private.ipynb
 
 #### Schedule
