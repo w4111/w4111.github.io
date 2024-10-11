@@ -6,7 +6,7 @@ white,3-Sep,Intro and Overview,,1,https://github.com/w4111/w4111.github.io/blob/
 #e7f8ff,17-Sep,Relational Model,,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec3.pdf,"Ch 2.1-2.3, 2.5, 6.7, 6.8, except 6.7.2",,"<a href=""https://github.com/w4111/hw1-f24"">HW1 Part 2 Schema</a>",,Project 1 Part 1 approval phase,,,,
 #f2f9ed,19-Sep,Relational Algebra,,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec4.pdf,"Ch 2.6 (use lecture notations, which differ from the book)",,,,Project 1 Part 1 approval phase,,,,
 #f2f9ed,24-Sep,Relational Algebra,,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec4.pdf,"Ch 2.6 (use lecture notations, which differ from the book)",,,,Project 1 Part 1 10AM digital copy (extended to 9/27 11:59PM EST),,,,
-#f2f9ed,26-Sep,"SQL: Basics, Joins",,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec5.pdf,Ch 3,,<a href=""https://github.com/w4111/hw2-f24"">HW 2</a><br/>Project 1 Part 2,,HW1 Part 2,,"<a href=""https://github.com/w4111/hw2-f22"">HW2</a><br/>",,
+#f2f9ed,26-Sep,"SQL: Basics, Joins",,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec5.pdf,Ch 3,,HW 2<br/>Project 1 Part 2,,HW1 Part 2,,"<a href=""https://github.com/w4111/hw2-f22"">HW2</a><br/>",,
 #f2f9ed,1-Oct,"SQL: Group by, Order by, UDFs",,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec5.pdf,Ch 3,,,,,,,,
 #f2f9ed,3-Oct,SQL: Advanced,,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec5.pdf,"Ch 4.1-4.4, 5.2-5.4",,,,HW2 (No grace days/late submissions accepted at all beyond 10/7 11:59PM EST),,,,
 white,8-Oct,Review,,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec5-review.pdf,,,,,,,,,
