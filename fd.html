@@ -1,0 +1,144 @@
+<html>
+  <link href="./files/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <style>
+    .row {
+      margin-top: 1em;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="row"><div class="col-md-12">
+        <h3>Functional Dependency Problem Generator</h3>
+        <div class="row"><div class="col-md-7">
+          <p>
+          We have generated 99 random functional dependency problems for you to have practice with.
+          You can press &larr; or &rarr; on the keyboard to go to the previous or next problem.
+          </p>
+          <p>See a bug?  Please let us know on piazza!</p>
+          <button class="btn btn-primary" id="btn">Click to Toggle Answer</button>
+          &nbsp; &nbsp;
+          <button class="btn btn-primary" id="btnprev">&larr;</button>
+          <button class="btn btn-primary" id="btnrand">Go to random question</button>
+          <button class="btn btn-primary" id="btnnext">&rarr;</button>
+        </div>
+        <div class="col-md-5">
+          <div id="legend">
+            <table class="table table-striped condensed small">
+              <thead>
+                <tr>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div> </div>
+      </div> </div>
+
+      <div class="row"><div class="col-md-12">
+          <h2>Problem <span id="probIdx"></span> out of <span id="probCount"></span></h2>
+        <div id="problem"></div>
+      </div></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12"><center>Designed for Normalization lectures in Columbia's <a href="https://w4111.github.io">W4111</a></center></div>
+    </div>
+  </body>
+
+
+  <script id="entry-template" type="text/x-handlebars-template">
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Info</h4>
+        <table class="table condensed"><tbody>
+          <tr><td>Relation</td><td> {{prob.relation}}</td></tr>
+          <tr>
+            <td><div>Functional Deps</td>
+            <td> 
+            {{#each prob.fds}}
+              <div>{{this}}</div>
+            {{/each}}
+            </td>
+          </tr>
+          <tr>
+            <td>Is BCNF?</td>
+            <td><span class="sol" style="display:none">{{solution.is_bcnf}}</span></td>
+          </tr>
+          <tr style="display:none">
+            <td>Is 3NF?</td>
+            <td><span class="sol" style="display:none">{{solution.is_3nf}}</span></td>
+          </tr>
+        </tbody></table>
+      </div>
+
+      
+      <div class="col-md-2" style="">
+        <h3>Minimal FDs</h3>
+        <small>List the minimal closure for the functional dependencies</small>
+        <div class="sol" style="display: none">
+            {{#each solution.minfds}}
+              <div>{{this}}</div>
+            {{/each}}
+        </div>
+      </div>
+      <div class="col-md-6" >
+        <h3>Decomposition</h3>
+        <h4>BCNF using FDs</h4>
+        <small>List the BCNF decomposition using the provided functional dependencies.  
+              Note that BCNF decomposition is not unique!:</small>
+        <div>
+          <span class="sol" style="display:none">{{#each solution.bcnf.orig}} <span class='relation'>{{this}}</span> {{/each}}</span>
+        </div>
+
+        <!--
+        <br/>
+        <h4>BCNF using Minimal Cover</h4>
+        <small>List the BCNF decomposition using the minimal closure of the functional deps (this is just to give you more decomposition exercises):</small>
+        <div>
+          <span class="sol-no" style="display:none">{{#each solution.bcnf.minfds}} <span class='relation'>{{this}}</span> {{/each}}</span>
+        </div>
+
+        <br/>
+        <h4>3NF</h4>
+        <small>List the 3NF decomposition:</small>
+        <div>
+          <span class="sol-no" style="display:none">{{#each solution.tnf}} <span class='relation'>{{this}}</span> {{/each}}</span>
+        </div>
+        -->
+      </div>
+
+    </div>
+  </script>
+
+<style>
+.sol {
+  font-size: larger;
+}
+small {
+  color: gray;
+}
+.relation{
+  display: block;
+}
+</style>
+
+  <script src="./files/js/underscore.js"></script>
+  <script src="./files/js/jquery.js"></script>
+  <script src="./files/js/handlebars.js"></script>
+  <script src="./files/js/bootstrap.min.js"></script>
+  <script src="./files/js/fd.js"></script>
+  <script>
+    $(function() {
+      setupKeyEvents();
+      loadProblem(probIdx);
+      $("#btn").click(function() {
+        isHidden = !isHidden;
+        updateSolHidden();
+      })
+
+    });
+  </script>
+</html>
