@@ -61,7 +61,7 @@ Exams
 
 Extra Credits
 
-* TBA
+* [EC1](https://github.com/w4111/w4111.github.io/wiki) <small>3%</small>
 
 <!-- 
   * [Learn a DB Technology](https://github.com/w4111/w4111.github.io/wiki)
