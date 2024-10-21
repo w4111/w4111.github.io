@@ -25,6 +25,7 @@ Developed by others:
 #### Announcements
 
 
+* 10/21: updated lecture 7 slides with semantic profiling and LLM discussion
 * 10/17: [Functional dependency exercises](./fd)
 * 10/3: [This folder contains notebooks of examples from class](https://github.com/w4111/w4111.github.io/tree/main/src/notebooks).   Click on "Open in Colab" on the line with sql_private.ipynb
 * 9/29: An [external Relation Algebra calculator](http://dbis-uibk.github.io/relax/calc.htm#) that might help you write and understand relational algebra.
