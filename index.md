@@ -24,7 +24,7 @@ Developed by others:
 
 #### Announcements
 
-
+* 10/24: link to [sql injection example](https://w4111.github.io/inject) and [the source code](https://github.com/w4111/w4111.github.io/tree/main/src/injection)
 * 10/21: updated lecture 7 slides with semantic profiling and LLM discussion
 * 10/17: [Functional dependency exercises](./fd)
 * 10/3: [This folder contains notebooks of examples from class](https://github.com/w4111/w4111.github.io/tree/main/src/notebooks).   Click on "Open in Colab" on the line with sql_private.ipynb
