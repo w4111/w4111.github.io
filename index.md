@@ -24,6 +24,7 @@ Developed by others:
 
 #### Announcements
 
+* 10/31: updated lecture 8 (files and indexes) and removed slides 71 and 72, which were from a previous year.
 * 10/24: link to [sql injection example](https://w4111.github.io/inject) and [the source code](https://github.com/w4111/w4111.github.io/tree/main/src/injection)
 * 10/21: updated lecture 7 slides with semantic profiling and LLM discussion
 * 10/17: [Functional dependency exercises](./fd)
