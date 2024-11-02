@@ -197,7 +197,8 @@ Due to the additional work that the staff must take to assess and manage extra c
 
 Unless otherwise specified, you are allowed 5 penalty free late days to use throughout the semester for _homework only_.  
 
-* One late day equals one 24 hour period after the due date of the assignment.  
+* One late day equals one 24 hour period after the due date of the assignment.
+* For assignments broken into programming and non-programming parts, the number of late days you use on this assigment is max(programming late days, non-programming late days).
 * Even 1 minute late equals the use of a late day.
 * Once you have used your late days, there will be a 25% penalty for each day an assignment is late.  
 * You do not need to explictly declare the use of late days;  we will assign them to you in a way that is optimal for your grade, based on the worth of an assignment and your score on the assignment.
