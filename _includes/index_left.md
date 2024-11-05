@@ -62,6 +62,7 @@ Exams
 Extra Credits
 
 * [EC1](https://github.com/w4111/w4111.github.io/wiki) <small>3%</small>
+* [EC2](https://edstem.org/us/courses/61495/discussion/5648132) <small>1%</small>
 
 <!-- 
   * [Learn a DB Technology](https://github.com/w4111/w4111.github.io/wiki)
