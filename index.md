@@ -24,6 +24,7 @@ Developed by others:
 
 #### Announcements
 
+* 11/07: extended project 1 part 3 deadline to 11/14, hw4 and project 2 to 12/1.
 * 11/05: released [extra credit: data as art](https://edstem.org/us/courses/61495/discussion/5648132)
 * 10/31: updated lecture 8 (files and indexes) and removed slides 71 and 72, which were from a previous year.
 * 10/24: link to [sql injection example](https://w4111.github.io/inject) and [the source code](https://github.com/w4111/w4111.github.io/tree/main/src/injection)
