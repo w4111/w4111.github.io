@@ -1,0 +1,180 @@
+<html>
+  <link href="./files/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <style>
+    .row {
+      margin-top: 1em;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="row"><div class="col-md-12">
+        <h3>Join Problem Generator <small>Refresh for new problem</small></h3>
+        <div class="row"><div class="col-md-7">
+          <p>
+          This page generates simple (in terms of setup and assumptions) 4-way join optimization problems.  
+          Given the statistics and tables below, compute the join plan based on Selinger as discussed in class,
+          the result cardinality, as well as the cost in terms of the number of pages that must be read. 
+          </p>
+          Assumptions:
+
+          <ol>
+            <li>The fanout is the same as the number of directory entries</li>
+            <li>Restricted to the join options in the table on the right</li>
+            <li>Joins are on the same attribute</li>
+            <li>Join attr is a key in each table</li>
+            <li>All tuples are the same size</li>
+            <li>Indices are all on this attribute.</li>
+            <li>Joins are not key-foreign key joins</li>
+            <li>There's no cache, so each page must be accessed from disk.</li>
+          </ol>
+          <button class="btn btn-primary btn-lg" id="btn">Click to Toggle Answer</button>
+        </div>
+        <div class="col-md-5">
+          <div id="legend">
+            <table class="table table-striped condensed small">
+              <thead>
+                <tr>
+                  <th>Join Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hash-INL</td>
+                  <td>Index nested loops using Hash Index</td>
+                </tr>
+                <tr>
+                  <td>Primary-BTree-INL</td>
+                  <td>Index nested loops using Primary BTree</td>
+                </tr>
+                <tr>
+                  <td>Sec-BTree-INL</td>
+                  <td>Index nested loops using Secondary BTree</td>
+                </tr>
+                <tr>
+                  <td>NL</td>
+                  <td>Nested loops</td>
+                </tr>
+                <tr>
+                  <td>HashJoin</td>
+                  <td>Hash Join</td>
+                </tr>
+              </tbody>
+            </table>
+          </div><!--/legend-->
+        </div> </div>
+      </div> </div>
+
+      <div class="row"><div class="col-md-12">
+        <div id="problem"></div>
+      </div></div>
+      <div class="row sol" style="display:none">
+        <h4>Solutions</h4>
+        <div class="col-md-12" style="">
+          <div id="solution"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12"><center>Designed for the simplified query optimization lectures in Columbia's <a href="http://w4111.github.io">W4111 Introduction to Databases</a></center></div>
+    </div>
+  </body>
+
+
+
+  <script id="sol-template" type="text/x-handlebars-template">
+    <div class="row"><div class="col-md-12">
+      <code class="lead">{{solution}}</code>
+    </div></div>
+    <div class="row"><div class="col-md-10">
+      {{#each joins}}
+        <div class="row">
+          <div class="col-md-5 lead">
+            {{result}} = {{outer}} {{jointype}} {{inner}}
+          </div>
+          <div class="col-md-4">
+            <table class="table condensed small">
+              <tr>
+                <td>Result Cardinality</td>
+                <td><mark>{{cardinality}}</mark></td>
+              </tr>
+              <tr>
+                <td>Estimated Cost</td>
+                <td><mark>{{joincost}}</mark></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      {{/each}}
+
+    </div></div>
+    <div class="row"><div class="col-md-6">
+    </div></div>
+  </script>
+  <script id="entry-template" type="text/x-handlebars-template">
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Stats</h4>
+        <table class="table condensed small"><tbody>
+          <tr><td>Fill Factor</td><td> <mark>{{stats.fillfactor}}</mark></td></tr>
+          <tr><td><div>Dir Entry Size</td><td> <mark>{{stats.desize}}</mark> bytes</td></tr>
+          <tr><td><div>Tuple Size</td><td> <mark>{{stats.tupsize}}</mark> bytes</td></tr>
+          <tr><td><div>Page Size</td><td> <mark>{{stats.pagesize}}</mark> bytes</td></tr>
+          <tr class="sol" style="display:none">
+            <td>DE/Page</td>
+            <td> {{stats.desperpage}} = <mark>floor(({{stats.pagesize}}*{{stats.fillfactor}}) / {{stats.desize}}) </mark>
+          </td></tr>
+          <tr class="sol" style="display:none">
+            <td> Tups/Page</td>
+            <td> {{stats.tupsperpage}} = <mark>floor(({{stats.pagesize}}*{{stats.fillfactor}}) / {{stats.tupsize}}) </mark>
+          </td></tr>
+        </tbody></table>
+      </div>
+      {{#each tables}}
+        <div class="col-md-2">
+          <h4>{{name}}</h4>
+          <mark>{{card}}</mark> tuples<br/>
+          <div class="sol" style="display: none">
+            <mark>{{npages}}</mark> pages
+          </div>
+          <h5>Indexes</h5>
+          {{#if hash}}Primary hash index <div class="sol">lookup cost for 1 tup: <mark>{{hashCost}}</mark></div> <br/>{{/if}}
+          {{#if ptree}}Primary tree index <div class="sol">lookup cost for 1 tup: <mark>{{ptreeCost}}</mark></div><br/>{{/if}}
+          {{#if stree}}Secondary tree index <div class="sol">lookup cost for 1 tup: <mark>{{streeCost}}</mark></div><br/>{{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </script>
+
+  <script src="./files/js/underscore.js"></script>
+  <script src="./files/js/jquery.js"></script>
+  <script src="./files/js/handlebars.js"></script>
+  <script src="./files/js/bootstrap.min.js"></script>
+  <script src="./files/js/join.js"></script>
+  <script>
+    $(function() {
+      var opts = {
+        tupsizes: [10, 50, 100, 200],
+        fillfactors: [0.25, 0.5, 1],
+        desizes: [5],
+        tupsperpage: [2, 5, 10, 20, 50]
+      }
+      genProblem(opts)
+      $(".sol").hide()
+    });
+  </script>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67363085-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

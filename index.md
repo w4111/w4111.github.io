@@ -8,7 +8,6 @@ The goal of this class is two-fold. First, to introduce you to core database con
 
 The Data Management Seminar invites interesting database researchers and practitioners to speak.  Students are invited to join in person or on zoom (if available).   We will announce these periodically throughout the semester.
 
-<!--
 #### Automated Exercises/resources
 
 Developed for W4111
@@ -20,7 +19,8 @@ Developed for W4111
 Developed by others:
 
 * Here is a [link to another DB course's database recovery simulator](https://mwhittaker.github.io/aries/) (ARIES protocol).  It is more in depth than what we discussed in class, but is nice if you are interested in the details.
--->
+
+
 
 #### Announcements
 

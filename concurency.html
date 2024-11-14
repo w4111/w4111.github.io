@@ -1,0 +1,180 @@
+<html>
+  <link href="./files/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <style>
+    .row {
+      margin-top: 1em;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="row"><div class="col-md-12">
+        <h3>Concurrency Problem Generator </h3>
+        <div class="row"><div class="col-md-7">
+          <p>
+          This page generates simple concurrency control schedules and asks you about their properties.
+          Please note that these are just to help generate schedules for you to analyze, you should also understand the concepts themselves!
+          </p>
+          <p><small>
+            These problems do not cover anomalies due to aborts.
+            Assume that transactions commit immediately after the last operation in the transaction.
+          </small></p>
+        </div> </div>
+        <div class="row"><div class="col-md-5">
+          <table class="table"><tbody>
+            <tr>
+              <td>Num Objects</td><td><input id="nobjs" value="2"/></td>
+            </tr>
+            <tr>
+              <td>Max num Operations per Xact</td><td><input id="nopts" value="5"/></td>
+            </tr>
+          </tbody></table>
+          <button class="btn btn-primary btn-lg" id="btn-gen">Gen Problem</button>
+          <button class="btn btn-primary btn-lg" id="btn">Click to Toggle Answer</button>
+        </div>
+      </div> </div>
+
+      <div class="row"><div class="col-md-12">
+        <div id="problem"></div>
+      </div></div>
+      <div class="row sol" style="display:none">
+        <h4>Solutions</h4>
+        <div class="col-md-12" style="">
+          <div id="solution"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12"><center>Designed for Columbia's <a href="https://w4111.github.io">W4111 Intro to Databases</a></center></div>
+    </div>
+  </body>
+
+
+
+  <script id="sol-template" type="text/x-handlebars-template">
+    <div class="row"><div class="col-md-12">
+      <!--<code class="lead">{{solution}}</code>-->
+    </div></div>
+    <div class="row"><div class="col-md-12">
+        <table class="table"><tbody>
+          <!--<tr><td>Is Serializable?</td><td>{{isSerializable}}</td></tr>-->
+          <tr>
+              <td style="width:25em">List the conflicts between the transactions.</td>
+              <td>
+                <table>
+                {{#each conflicts}}
+                  <tr>
+                    <td style="text-align: right;"> <b style="margin-right: 1em;">{{this.name}}</b></td>
+                    {{#each this.conflicts}}
+                      <td><span style="margin-right: 1em; background: #eee; text-decoration: dotted; padding: 3px;">
+                      {{this}}
+                      </span></td>
+                    {{/each}}
+                  </tr>
+                {{/each}}
+                </table>
+              </td>
+          </tr>
+          <tr><td style="width:25em">Is Conflict Serializable?</td><td>{{isConflictSerializable}}</td></tr>
+          <tr><td style="width:25em">Is Strict 2PL?<br/> <small>(Assuming COMMIT immediately after last operation)</small></td><td>{{isS2PL}}</td></tr>
+        </tbody></table>
+    </div></div>
+  </script>
+  <script id="schedule-template" type="text/x-handlebars-template">
+    <div class="row">
+      <div class="col-md-5">
+        <p>Please answer the following for the schedule:</p>
+        <ol>
+          <li>List the Conflicts 
+          <li>Is Conflict Serializable?
+          <li>Is Allowed by Strict 2PL?
+        </ol>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">
+        <table class="table">
+          <tbody>
+            <th>
+              {{#each header}} <td style="text-align: center;"> {{this}} </td> {{/each}}
+            </th>
+          {{#each schedule}}
+            <tr>
+              <td>{{this.0.xact}}</td>
+              {{#each this}}
+              <td>{{#if this.op}} {{op}}({{obj}}) {{/if}}</td>
+              {{/each}}
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </script>
+
+  <script src="./files/js/underscore.js"></script>
+  <script src="./files/js/jquery.js"></script>
+  <script src="./files/js/handlebars.js"></script>
+  <script src="./files/js/bootstrap.min.js"></script>
+  <script src="./files/js/concurrency.js"></script>
+  <script>
+    function test() {
+      var s = [
+      { xact: "T1", obj: "C", op: "W", val: null }
+      ,{ xact: "T2", obj: "A", op: "R", val: null }
+      ,{ xact: "T2", obj: "B", op: "W", val: null }
+      ,{ xact: "T2", obj: "B", op: "W", val: null }
+      ,{ xact: "T1", obj: "A", op: "R", val: null }
+      ,{ xact: "T1", obj: "A", op: "R", val: null }
+      ,{ xact: "T2", obj: "A", op: "W", val: null }
+      ,{ xact: "T1", obj: "C", op: "R", val: null }
+      ]
+      var s = [
+      { xact: "T1", obj: "A", op: "W", val: null }
+      ,{ xact: "T2", obj: "A", op: "R", val: null }
+      ,{ xact: "T2", obj: "B", op: "W", val: null }
+      ,{ xact: "T2", obj: "B", op: "W", val: null }
+      ]
+
+
+      console.log(isS2PL(s));
+    };
+    $(function() {
+      var opts = {
+        nobjs: 2,
+        nopts:5 
+      }
+      genProblem(opts);
+      $("#btn").click(function() {
+        $(".sol").toggle();
+      })
+
+      $("#btn-gen").click(function() {
+        var o = _.clone(opts);
+        if (_.isFinite(Number.parseInt($("#nobjs").val()))) 
+          o.nobjs = Number.parseInt($("#nobjs").val());
+        if (_.isFinite(Number.parseInt($("#nopts").val()))) 
+          o.nopts = Number.parseInt($("#nopts").val());
+        console.log(JSON.stringify(o))
+        genProblem(o)
+
+
+      });
+
+    });
+  </script>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67363085-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
