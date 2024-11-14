@@ -52,7 +52,7 @@ Homeworks <small>15%</small>
 Projects 
 
 * [Project 1](https://github.com/w4111/project1-f24) <small>15%</small>
-* [Project 2](https://github.com/w4111/project2-f24-template) <small>5%</small>
+* [Project 2](https://github.com/w4111/project2-f24) <small>5%</small>
 
 Exams
 
