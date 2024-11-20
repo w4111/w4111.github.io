@@ -19,9 +19,9 @@ white,10-Oct,Midterm 1 (in class),In-person,,,,,"<a href=""https://github.com/w4
 #ffe7e7,31-Oct,Physical Design,Indexes and Access Methods,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec8.pdf,"Ch 12, 13.1-13.3, 14.3, 14.5",,,,,,,,
 #ffe7e7,7-Nov,Query Processing,"Plans, Statistics, Joins",1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec9.pdf,Ch 15.1-15.6,,,,,,,,
 #ffe7e7,12-Nov,Query Processing,Joins Optimization,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec9.pdf,Ch 15.1-15.6,,,,,,,,
-#ffe7e7,14-Nov,Transactions,Concurrency Control,,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec10.pdf,Ch 17,,,,Project 1 Part 3 Due & Part 3 Meetings,,,,
-#ffe7e7,19-Nov,Transactions,Concurrency Control,,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec10.pdf,Ch 17,,,,Project 1 Part 3 Meetings,,,,
-#ffe7e7,21-Nov,Transactions,Recovery,,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec10.pdf,Ch 17,,,,Project 1 Part 3 Meetings,,,,"HW4<br/><a href=""https://github.com/w4111/project2-f22-template"">Project 2</a>"
+#ffe7e7,14-Nov,Transactions,Concurrency Control,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec10.pdf,Ch 17,,,,Project 1 Part 3 Due & Part 3 Meetings,,,,
+#ffe7e7,19-Nov,Transactions,Concurrency Control,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec10.pdf,Ch 17,,,,Project 1 Part 3 Meetings,,,,
+#ffe7e7,21-Nov,Transactions,Recovery,1,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec10.pdf,Ch 17,,,,Project 1 Part 3 Meetings,,,,"HW4<br/><a href=""https://github.com/w4111/project2-f22-template"">Project 2</a>"
 #f2f9ed,26-Nov,Guest Lecture (Tentative),TBA,,,,,,,HW4 (12/1 11:59PMEST)<br/>Project 2 (12/1 11:59PMEST),,,,"<a href=""https://github.com/w4111/-Extra-Credit-Kaggle-Analysis-"">Kaggle Extra Credit</a>"
 #f2f9ed,3-Dec,Beyond Classic Relational DBMSes,,,https://github.com/w4111/w4111.github.io/blob/master/files/lectures/lec11.pdf,,,,,EC2 (12/2 11:59PM EST),,,,
 #f2f9ed,5-Dec,Review,,,,,,,,,,,,Wiki extra credit (12/9 11:59PM EST)
