@@ -107,34 +107,48 @@ function getConflicts(schedule) {
   var wrconflicts = [];
   var wwconflicts = [];
   var graph = {};
-  _.each(schedule, function(op1, idx1) {
-    _.each(schedule, function(op2, idx2) {
-      if (idx2 <= idx1) return;
-      if (op1.xact != op2.xact && op1.obj == op2.obj) {
-        msg = idx1 + "," + idx2 + " on " + op1.obj;
-        if (op1.op == "W" && op2.op == "W") {
-          wwconflicts.push(msg);
-        }
-        if (op1.op == "W" && op2.op == "R") {
-          wrconflicts.push(msg);
-        }
-      }
-    })
-  });
+  schedule = R.zip(schedule, _.times(schedule.length, (i) => i));
 
-  _.each(schedule, function(op1, idx1) {
-    if (op1.op != "R") return;
-    _.each(schedule, function(op2, idx2) {
-      if (idx2 <= idx1) return;
-      if (op2.op != "W" || op2.obj != op1.obj || op2.xact == op1.xact) return;
-      _.each(schedule, function(op3, idx3) {
-        if (idx3 <= idx2) return;
-        if (op3.op != "R" || op3.obj != op1.obj || op3.xact == op2.xact) return;
-        var msg = idx1 + "," + idx2 + "," + idx3 + " on " + op1.obj;
-        rwconflicts.push(msg)
-      });
-    });
-  });
+  console.log(R.xprod(schedule, schedule))
+  R.xprod(schedule, schedule).forEach(([
+    [{xact: xact1, op: op1, obj: obj1},idx1], 
+    [{xact: xact2, op: op2, obj:obj2},idx2]]) => {
+    if (xact1 == xact2 || obj1 != obj2) return;
+    msg = `${idx1},${idx2} on ${obj1}`
+    if (op1 == "W" && op2 == "W") wwconflicts.push(msg);
+    if (op1 == "W" && op2 == "R" && idx1 < idx2) wrconflicts.push(msg);
+    if (op1 == "R" && op2 == "W" && idx1 < idx2) rwconflicts.push(msg);
+  })
+
+
+//  _.each(schedule, function(op1, idx1) {
+//    _.each(schedule, function(op2, idx2) {
+//      if (idx2 <= idx1) return;
+//      if (op1.xact != op2.xact && op1.obj == op2.obj) {
+//        msg = idx1 + "," + idx2 + " on " + op1.obj;
+//        if (op1.op == "W" && op2.op == "W") {
+//          wwconflicts.push(msg);
+//        }
+//        if (op1.op == "W" && op2.op == "R") {
+//          wrconflicts.push(msg);
+//        }
+//      }
+//    })
+//  });
+//
+//  _.each(schedule, function(op1, idx1) {
+//    if (op1.op != "R") return;
+//    _.each(schedule, function(op2, idx2) {
+//      if (idx2 <= idx1) return;
+//      if (op2.op != "W" || op2.obj != op1.obj || op2.xact == op1.xact) return;
+//      _.each(schedule, function(op3, idx3) {
+//        if (idx3 <= idx2) return;
+//        if (op3.op != "R" || op3.obj != op1.obj || op3.xact == op2.xact) return;
+//        var msg = idx1 + "," + idx2 + "," + idx3 + " on " + op1.obj;
+//        rwconflicts.push(msg)
+//      });
+//    });
+//  });
  
   return {
     rw: {
