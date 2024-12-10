@@ -59,7 +59,7 @@
         <table class="table"><tbody>
           <!--<tr><td>Is Serializable?</td><td>{{isSerializable}}</td></tr>-->
           <tr>
-              <td style="width:25em">List the conflicts between the transactions.</td>
+              <td style="width:25em">List the conflicts between the transactions. <small>Ignoring COMMITS</small></td>
               <td>
                 <table>
                 {{#each conflicts}}
@@ -75,7 +75,7 @@
                 </table>
               </td>
           </tr>
-          <tr><td style="width:25em">Is Conflict Serializable?</td><td>{{isConflictSerializable}}</td></tr>
+          <tr><td style="width:25em">Is Conflict Serializable? <small>Recall conflict serializability ignores commit/abort points</small></td><td>{{isConflictSerializable}}</td></tr>
           <tr><td style="width:25em">Is Strict 2PL?<br/> <small>(Assuming COMMIT immediately after last operation)</small></td><td>{{isS2PL}}</td></tr>
         </tbody></table>
     </div></div>
