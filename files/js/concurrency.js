@@ -23,7 +23,7 @@ function genTransaction(opts) {
   var xact = opts.xact;
   var nobjs = opts.nobjs || 2;
   var nopts = opts.nopts || 5;
-  nopts = randInt(3, nopts);
+  //nopts = randInt(3, nopts);
   objs = _.times(nobjs, function(i) { return i; });
 
   return _.times(nopts, function() {
@@ -106,6 +106,7 @@ function getConflicts(schedule) {
   var rwconflicts = [];
   var wrconflicts = [];
   var wwconflicts = [];
+  var rwrconflicts = [];
   var graph = {};
   schedule = R.zip(schedule, _.times(schedule.length, (i) => i));
 
@@ -114,7 +115,7 @@ function getConflicts(schedule) {
     [{xact: xact1, op: op1, obj: obj1},idx1], 
     [{xact: xact2, op: op2, obj:obj2},idx2]]) => {
     if (xact1 == xact2 || obj1 != obj2) return;
-    msg = `${idx1},${idx2} on ${obj1}`
+    msg = `${idx1},${idx2}(${obj1})`
     if (op1 == "W" && op2 == "W") wwconflicts.push(msg);
     if (op1 == "W" && op2 == "R" && idx1 < idx2) wrconflicts.push(msg);
     if (op1 == "R" && op2 == "W" && idx1 < idx2) rwconflicts.push(msg);
@@ -136,32 +137,36 @@ function getConflicts(schedule) {
 //    })
 //  });
 //
-//  _.each(schedule, function(op1, idx1) {
-//    if (op1.op != "R") return;
-//    _.each(schedule, function(op2, idx2) {
-//      if (idx2 <= idx1) return;
-//      if (op2.op != "W" || op2.obj != op1.obj || op2.xact == op1.xact) return;
-//      _.each(schedule, function(op3, idx3) {
-//        if (idx3 <= idx2) return;
-//        if (op3.op != "R" || op3.obj != op1.obj || op3.xact == op2.xact) return;
-//        var msg = idx1 + "," + idx2 + "," + idx3 + " on " + op1.obj;
-//        rwconflicts.push(msg)
-//      });
-//    });
-//  });
+  _.each(schedule, function(op1, idx1) {
+    if (op1.op != "R") return;
+    _.each(schedule, function(op2, idx2) {
+      if (idx2 <= idx1) return;
+      if (op2.op != "W" || op2.obj != op1.obj || op2.xact == op1.xact) return;
+      _.each(schedule, function(op3, idx3) {
+        if (idx3 <= idx2) return;
+        if (op3.op != "R" || op3.obj != op1.obj || op3.xact == op2.xact) return;
+        var msg = `${idx1},${idx2},${idx3}(${obj1})`
+        rwrconflicts.push(msg)
+      });
+    });
+  });
  
   return {
     rw: {
-      name: "RW Unrepeatable Reads",
+      name: "RW Conflict",
       conflicts: rwconflicts
     },
     wr: {
-      name: "WR Dirty Reads",
+      name: "WR Conflict: Read uncommited data",
       conflicts: wrconflicts
     },
     ww: {
-      name: "WW Lost Writes",
+      name: "WW Conflict: First write is lost",
       conflicts: wwconflicts
+    },
+    rwr: {
+      name: "RWR: First read is unrepeatable",
+      conflicts: rwrconflicts
     }
   };
 }
